@@ -17,13 +17,21 @@ body{
     /* font-weight: 500; */
 }
 
+h1{
+    text-align: center;
+    /* text-transform: uppercase; */
+    font-weight: 300;
+    font-size: 35px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
 .container{
     padding: 20px;
     width: 370px;
     height: 600px;
     background: #035AA6;
     border-radius: var(--radius);
-    margin-top: 30px;
+    /* margin-top: 30px; */
     display: grid;
     grid-auto-rows: 1fr 10fr;
 
