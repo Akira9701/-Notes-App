@@ -1,0 +1,336 @@
+:root{
+    --light-color: #91bbf2;
+    --lighter-color:#0367A6;
+    --mid-color:#035AA6;
+    --darker-color:#023059;
+    --dark-color:#011526;
+    --radius: 12px;
+}
+
+body{
+    /* background: var(--light-color); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Open Sans';
+    height: 100%;
+    /* font-weight: 500; */
+}
+
+.container{
+    padding: 20px;
+    width: 370px;
+    height: 600px;
+    background: #035AA6;
+    border-radius: var(--radius);
+    margin-top: 30px;
+    display: grid;
+    grid-auto-rows: 1fr 10fr;
+
+
+}
+
+.weather-zone{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+}
+
+.weather-zone_weather-block, .weather-zone_date-block{
+    width: 145px;
+    height: 145px;
+    background: var(--lighter-color);
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.weather-zone_weather-block{
+    color: white;
+
+}
+
+.weather-zone_time{
+    width: 15px;
+    height: 15px;
+    /* background: var(--light-color); */
+    margin-bottom: 7.5px;
+}
+
+.weather-zone_city{
+    font-size: 16px;
+}
+
+.weather-zone_max, .weather-zone_min{
+    font-size: 15px;
+}
+
+.weather-zone_weather-block p {
+    margin-bottom: 5px;
+    
+}
+
+.weather-zone_degree{
+    font-size: 64px;
+    font-weight: 200;
+    margin-bottom: 2.5;
+}
+
+.weather-zone_date-block{
+    background: white;
+}
+
+.weather-zone_date-name{
+    text-align: center;
+    color: red;
+    margin-bottom: 5px;
+}
+
+.weather-zone_date-var{
+    text-align: center;
+    font-size: 100px;
+}
+
+.weather-zone_time svg{
+        width: 16px;
+        height: 16px;
+        display: none;
+    
+}
+
+.weather-zone_time.night-mode .night{
+    display: block;
+}
+
+.weather-zone_time.day-mode .day{
+    display: block;
+}
+
+.weather-zone_weather-block.night-mode{
+    background: rgb(2,0,36);
+background: -moz-linear-gradient(0deg, rgba(2,0,36,1) 19%, rgba(9,9,121,1) 69%);
+background: -webkit-linear-gradient(0deg, rgba(2,0,36,1) 19%, rgba(9,9,121,1) 69%);
+background: linear-gradient(0deg, rgba(2,0,36,1) 19%, rgba(9,9,121,1) 69%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#090979",GradientType=1);
+}
+
+.notes-zone{
+    /* overflow: hidden; */
+    overflow: scroll;
+    position: relative;
+    border-radius: var(--radius);
+    padding: 20px 15px;
+    width: calc(100% - 30px);
+    /* font-size: 24px; */
+    /* height: 460px; */
+    background: var(--darker-color);
+    border-radius: var(--radius);
+}
+
+.notes-zone_title{
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.notes-zone_note{
+    overflow: hidden;
+    position: relative;
+    color: white;
+    border-radius: var(--radius);
+    padding: 15px;
+    height:fit-content;
+    background: var(--mid-color);
+    transition-duration: 0.2s;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.notes-zone_note-title{
+    margin-bottom: 10px;
+}
+.notes-zone_note-desc{
+    font-size: 14px; 
+    font-weight: 200;
+    /* margin-bottom: 5px; */
+}
+
+.notes-zone_note:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 7px white;
+
+}
+
+
+.notes-zone_note-close-block{
+    top: 0;
+    right: 0;
+    position: absolute;
+    height: 100%;
+    width: 30px;
+    background: none;
+    
+}
+
+
+
+.notes-zone_note-close-col{
+    background: var(--darker-color);
+    height: 100%;
+    width: 100%;
+    position: relative;
+    left: 100%;
+    transition-duration: 0.2s;
+}
+
+.notes-zone_note-close-block:hover .notes-zone_note-close-col{
+
+    left: 0;
+}
+
+
+
+
+.notes-zone_note-close-btn{
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+}
+.notes-zone_note-close-btn{
+    width: 100%;
+    height: 100%;
+}
+
+.notes-zone_add-note{
+    width: 50px;
+    height: 50px;
+    background: var(--dark-color);
+    border-radius: var(--radius);
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.notes-zone_add-note:hover{
+    height: 60px;
+    width: 60px;
+    font-size: 32px;
+
+}
+
+.notes-zone_add-note-container{
+    font-family: 'Open Sans';
+    position:absolute ;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #023059;
+    padding: 20px 15px;
+    width: calc(100% - 30px);
+    /* height: 375px; */
+    height: auto;
+    display: none;
+    opacity: 0;
+    padding-bottom: 100px;
+}
+
+.notes-zone_add-note-container.active-note{
+    animation-name: openNote;
+    animation-duration: 0.2s;
+    display: block;
+    opacity: 1;
+}
+
+@keyframes openNote{
+    from {
+        display: none;
+        opacity:  0;
+      }
+      
+      25%{
+        display: block;
+        opacity: 0;
+      }
+
+      50% {
+        display: block;
+        opacity: 0.5;
+      }
+
+      75%{
+        display: block;
+        opacity: 0.75;
+      }
+    
+      to {
+        display: block;
+        opacity: 1;
+      }
+}
+
+.notes-zone_add-note-title{
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 10px;
+    width: 100%;
+    /* font-weight: 200; */
+    font-family: 'Open Sans';
+
+}
+
+.notes-zone_add-note-textarea{
+    font-family: 'Open Sans';
+
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    color: white;
+    font-weight: 200;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 100%;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.notes-zone_add-note-close-wrap{
+    width: 30px;
+    height: 30px;
+    background: var(--lighter-color);
+    border-radius: 100px;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.notes-zone_add-note-close-wrap svg{
+    width: 80%;
+    height: 80%;
+    transition-duration: 0.2s;
+}
+
+.notes-zone_add-note-close-wrap:hover{
+    box-shadow:0 0 7px white;
+
+}
+.notes-zone_add-note-close-wrap:hover svg{
+    fill: white;
+
+}
