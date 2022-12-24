@@ -293,7 +293,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endCo
 
 .notes-zone_add-note-textarea{
     font-family: 'Open Sans';
-
+    display: inline-table;
     background: none;
     outline: none;
     border: none;
