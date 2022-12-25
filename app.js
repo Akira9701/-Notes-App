@@ -111,6 +111,7 @@ function bigNote(){
     }
 
     function getWeather(city){
+        const weatherBlock = document.querySelector(".weather-zone_weather-block");
         const tempSide = document.querySelector('.weather-zone_degree');
         const windSide = document.querySelector('.weather-zone_max span');
         const citySide = document.querySelector('.weather-zone_city');
@@ -129,13 +130,14 @@ function bigNote(){
             citySide.innerHTML = city;
             tempSide.innerHTML = temp + '°';
             windSide.innerHTML = wind + ' км/ч';
-            if(hours > 17 && hours < 6){
-                timeSide.classList.remove('night-mode');
-                timeSide.classList.add('day-mode');
+            console.log(hours);
+            if(hours < 17 && hours > 6){
+                weatherBlock.classList.remove('night-mode');
+                weatherBlock.classList.add('day-mode');
 
             }else{
-                timeSide.classList.remove('day-mode');
-                timeSide.classList.add('night-mode');
+                weatherBlock.classList.remove('day-mode');
+                weatherBlock.classList.add('night-mode');
             }
 
             return temp;

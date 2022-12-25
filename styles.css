@@ -106,11 +106,11 @@ h1{
     
 }
 
-.weather-zone_time.night-mode .night{
+.weather-zone_weather-block.night-mode .night{
     display: block;
 }
 
-.weather-zone_time.day-mode .day{
+.weather-zone_weather-block.day-mode .day{
     display: block;
 }
 
@@ -120,6 +120,15 @@ background: -moz-linear-gradient(0deg, rgba(2,0,36,1) 19%, rgba(9,9,121,1) 69%);
 background: -webkit-linear-gradient(0deg, rgba(2,0,36,1) 19%, rgba(9,9,121,1) 69%);
 background: linear-gradient(0deg, rgba(2,0,36,1) 19%, rgba(9,9,121,1) 69%);
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#090979",GradientType=1);
+}
+
+.weather-zone_weather-block.day-mode{
+    background: rgb(218,221,141);
+background: -moz-linear-gradient(0deg, rgba(218,221,141,1) 19%, rgba(35,169,186,1) 79%);
+background: -webkit-linear-gradient(0deg, rgba(218,221,141,1) 19%, rgba(35,169,186,1) 79%);
+background: linear-gradient(0deg, rgba(218,221,141,1) 19%, rgba(35,169,186,1) 79%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#dadd8d",endColorstr="#23a9ba",GradientType=1);
+color: black;
 }
 
 .notes-zone{
