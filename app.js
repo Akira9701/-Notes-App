@@ -121,7 +121,7 @@ function bigNote(){
         const hours = (new Date()).getHours();
         let temp = "";
         let wind = "";
-        fetch(`http://api.weatherapi.com/v1/current.json?key=${key}&q=${city}&lang=ru
+        fetch(`https://api.weatherapi.com/v1/current.json?key=${key}&q=${city}&lang=ru
         `)
         .then(response => response.json())
         .then(result => {
